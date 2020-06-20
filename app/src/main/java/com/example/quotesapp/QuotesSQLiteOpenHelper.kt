@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper
 
 class QuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "QoutesDB", null, 1) {
     override fun onCreate(db: SQLiteDatabase?) {
+
+        // Categories Table
         db!!.execSQL(
             "CREATE TABLE quote_categories (" +
                     "_id INTEGER PRIMARY KEY," +
@@ -24,7 +26,57 @@ class QuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "Qout
         insertQouteCategory(db, 7, R.drawable.sad, "Sad")
         insertQouteCategory(db, 8, R.drawable.success, "Success")
 
+        // Quotes Table
+        db!!.execSQL(
+            "CREATE TABLE quotes(" +
+                    "quote TEXT," +
+                    "category_id INTEGER)"
+        )
+
+        insertQuote(db, "A room without books is like a body without a soul.", 1)
+        insertQuote(db, "A room without books is like a body without a soul.", 1)
+        insertQuote(db, "A room without books is like a body without a soul.", 1)
+        insertQuote(db, "A room without books is like a body without a soul.", 1)
+        insertQuote(db, "A room without books is like a body without a soul.", 1)
+        insertQuote(db, "A room without books is like a body without a soul.", 2)
+        insertQuote(db, "A room without books is like a body without a soul.", 2)
+        insertQuote(db, "A room without books is like a body without a soul.", 2)
+        insertQuote(db, "A room without books is like a body without a soul.", 2)
+        insertQuote(db, "A room without books is like a body without a soul.", 2)
+        insertQuote(db, "A room without books is like a body without a soul.", 3)
+        insertQuote(db, "A room without books is like a body without a soul.", 3)
+        insertQuote(db, "A room without books is like a body without a soul.", 3)
+        insertQuote(db, "A room without books is like a body without a soul.", 3)
+        insertQuote(db, "A room without books is like a body without a soul.", 3)
+        insertQuote(db, "A room without books is like a body without a soul.", 3)
+        insertQuote(db, "A room without books is like a body without a soul.", 4)
+        insertQuote(db, "A room without books is like a body without a soul.", 4)
+        insertQuote(db, "A room without books is like a body without a soul.", 4)
+        insertQuote(db, "A room without books is like a body without a soul.", 4)
+        insertQuote(db, "A room without books is like a body without a soul.", 4)
+        insertQuote(db, "A room without books is like a body without a soul.", 4)
+        insertQuote(db, "A room without books is like a body without a soul.", 4)
+        insertQuote(db, "A room without books is like a body without a soul.", 4)
+        insertQuote(db, "A room without books is like a body without a soul.", 5)
+        insertQuote(db, "A room without books is like a body without a soul.", 5)
+        insertQuote(db, "A room without books is like a body without a soul.", 5)
+        insertQuote(db, "A room without books is like a body without a soul.", 5)
+        insertQuote(db, "A room without books is like a body without a soul.", 5)
+        insertQuote(db, "A room without books is like a body without a soul.", 5)
+        insertQuote(db, "A room without books is like a body without a soul.", 5)
+        insertQuote(db, "A room without books is like a body without a soul.", 5)
+        insertQuote(db, "A room without books is like a body without a soul.", 5)
+
     }
+
+    fun insertQuote(db: SQLiteDatabase?, quote: String, categoryId: Int) {
+        val contentValues = ContentValues()
+        contentValues.put("quote", quote)
+        contentValues.put("category_id", categoryId)
+
+        db!!.insert("quotes", null, contentValues)
+    }
+
 
     fun insertQouteCategory(db: SQLiteDatabase?, id: Int, resourceId: Int, name: String) {
         val contentValues = ContentValues()
