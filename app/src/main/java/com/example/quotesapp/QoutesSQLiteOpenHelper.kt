@@ -37,6 +37,6 @@ class QoutesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "Qout
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
-        TODO("Not yet implemented")
+
     }
 }
