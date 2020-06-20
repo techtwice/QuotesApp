@@ -5,7 +5,6 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -60,24 +59,28 @@ class MainActivity : AppCompatActivity() {
         rvQuotesCategories.layoutManager = categoriesGridLayoutManager
 
 
-        /*
-
-        // Using the Layout Manager Verticle
-        val categoriesLayoutManager = LinearLayoutManager(this)
-        rvQuotesCategories.adapter = categoriesAdapter
-        rvQuotesCategories.layoutManager = categoriesLayoutManager
-
-
-
         // Using the Layout Manager Horizental
         val categoriesHorizontalLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvQuotesCategories.adapter = categoriesAdapter
-        rvQuotesCategories.layoutManager = categoriesHorizontalLayoutManager
+        rvQuotesCategoriesHorizental.adapter = categoriesAdapter
+        rvQuotesCategoriesHorizental.layoutManager = categoriesHorizontalLayoutManager
+
 
         // Using the Layout Manager Horizental Reverse True
         val categoriesHorizontalReverseLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true)
-        rvQuotesCategories.adapter = categoriesAdapter
-        rvQuotesCategories.layoutManager = categoriesHorizontalReverseLayoutManager
+        rvQuotesCategoriesHorizentalTrue.adapter = categoriesAdapter
+        rvQuotesCategoriesHorizentalTrue.layoutManager = categoriesHorizontalReverseLayoutManager
+
+
+        // Using the Layout Manager Verticle
+        val categoriesLayoutManager = LinearLayoutManager(this)
+        rvQuotesCategoriesVerticle.adapter = categoriesAdapter
+        rvQuotesCategoriesVerticle.layoutManager = categoriesLayoutManager
+
+
+
+
+        /*
+
 
 
 
