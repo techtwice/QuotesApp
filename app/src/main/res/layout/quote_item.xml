@@ -21,7 +21,7 @@
             android:textColor="@android:color/holo_orange_light"
             android:textSize="50sp"
             android:textStyle="bold|italic"
-            app:layout_constraintBottom_toTopOf="@+id/tvQuote"
+            app:layout_constraintBottom_toTopOf="@+id/tvQuoteItem"
             app:layout_constraintEnd_toStartOf="@+id/guideline" />
 
         <TextView
@@ -33,11 +33,11 @@
             android:textColor="@android:color/holo_orange_light"
             android:textSize="50sp"
             android:textStyle="bold|italic"
-            app:layout_constraintBottom_toBottomOf="@+id/tvQuote"
+            app:layout_constraintBottom_toBottomOf="@+id/tvQuoteItem"
             app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
         <TextView
-            android:id="@+id/tvQuote"
+            android:id="@+id/tvQuoteItem"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"

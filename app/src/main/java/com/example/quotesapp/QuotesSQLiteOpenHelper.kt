@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class QuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "QoutesDB", null, 1) {
+class QuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, null, null, 1) {
     override fun onCreate(db: SQLiteDatabase?) {
 
         // Categories Table
