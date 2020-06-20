@@ -1,5 +1,6 @@
 package com.example.quotesapp
 
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
@@ -46,6 +47,13 @@ class QuoteDetailsActivity : AppCompatActivity() {
         // Create an Adapter Object
 
         quotesAdapter = QuotesAdapter(this, listOfQuotes) { quote ->
+
+            val shareIntent = Intent()
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.putExtra(Intent.EXTRA_TEXT,quote)
+            shareIntent.type = "text/plain"
+            startActivity(shareIntent)
+
 
         }
 
