@@ -37,6 +37,12 @@ class CategoriesAdapter(val context: Context, val categories: List<CategoryData>
         fun bindData(category: CategoryData, context: Context) {
             categoryImage.setImageResource(category.resourceId)
             categoryName.text = category.name
+
+            itemView.setOnClickListener {
+                Toast.makeText(context,"You Clicked On ${category.name}", Toast.LENGTH_SHORT).show()
+                // val intent = Intent(context,QuoteDetailsActivity::class.java)
+                context.startActivity(Intent(context,QuoteDetailsActivity::class.java))
+            }
         }
     }
 
