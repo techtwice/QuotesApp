@@ -5,10 +5,10 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class QoutesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "QoutesDB", null, 1) {
+class QuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "QoutesDB", null, 1) {
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL(
-            "CREATE TABLE qoute_categories (" +
+            "CREATE TABLE quote_categories (" +
                     "_id INTEGER PRIMARY KEY," +
                     "image_resource_id TEXT," +
                     "name TEXT" +
@@ -32,7 +32,7 @@ class QoutesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "Qout
         contentValues.put("image_resource_id", resourceId)
         contentValues.put("name", name)
 
-        db!!.insert("qoute_categories", null, contentValues)
+        db!!.insert("quote_categories", null, contentValues)
 
     }
 
