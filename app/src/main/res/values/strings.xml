@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">QuotesApp</string>
+    <string name="grid_layout">Grid Layout</string>
+    <string name="linear_layout">Linear Layout</string>
+    <string name="linear_layout_reverse_true">Linear Layout Reverse True</string>
+    <string name="linear_layout_verticle">Linear Layout Verticle</string>
+    <string name="todo">TODO</string>
+    <string name="birthday">Birthday</string>
+    <string name="Left">“</string>
+    <string name="Right">”</string>
 </resources>

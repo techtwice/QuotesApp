@@ -11,9 +11,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    var db: SQLiteDatabase? = null
-    var cursor: Cursor? = null
-    var categoriesAdapter: CategoriesAdapter? = null
+    private var db: SQLiteDatabase? = null
+    private var cursor: Cursor? = null
+    private var categoriesAdapter: CategoriesAdapter? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,14 +33,14 @@ class MainActivity : AppCompatActivity() {
             null
         )
 
-        var listOfCategories = mutableListOf<CategoryData>()
+        val listOfCategories = mutableListOf<CategoryData>()
 
         while (cursor!!.moveToNext()) {
             val categoryId = cursor!!.getInt(0)
             val categoryResourceId = cursor!!.getInt(1)
             val categoryName = cursor!!.getString(2)
 
-            val categoryData: CategoryData =
+            val categoryData =
                 CategoryData(categoryId, categoryResourceId, categoryName)
 
             listOfCategories.add(categoryData)

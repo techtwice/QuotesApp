@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class QuotesAdapter(
-    val context: Context,
-    val quotes: List<String>,
+    private val context: Context,
+    private val quotes: List<String>,
     val onItemLongClick: (String) -> Unit
 ) :
     RecyclerView.Adapter<QuotesAdapter.MyViewHolder>() {
@@ -17,9 +17,8 @@ class QuotesAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
         val view = LayoutInflater.from(context).inflate(R.layout.quote_item, parent, false)
-        val myViewHolder = MyViewHolder(view, onItemLongClick)
 
-        return myViewHolder
+        return MyViewHolder(view)
 
     }
 
@@ -28,14 +27,14 @@ class QuotesAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder!!.bindQuote(quotes[position])
+        holder.bindQuote(quotes[position])
     }
 
 
-    inner class MyViewHolder(itemView: View, onItemLongClick: (String) -> Unit) :
+    inner class MyViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
 
-        val tvQuoteItem = itemView!!.findViewById<TextView>(R.id.tvQuoteItem)
+        private val tvQuoteItem: TextView = itemView.findViewById(R.id.tvQuoteItem)
 
         fun bindQuote(quote: String) {
             tvQuoteItem.text = quote

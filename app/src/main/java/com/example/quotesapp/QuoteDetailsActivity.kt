@@ -3,18 +3,17 @@ package com.example.quotesapp
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_quote_details.*
 
 class QuoteDetailsActivity : AppCompatActivity() {
 
-    var quoteCategoryId = 0
-    var db: SQLiteDatabase? = null
-    var cursor: Cursor? = null
-    var quotesAdapter: QuotesAdapter? = null
+    private var quoteCategoryId = 0
+    private var db: SQLiteDatabase? = null
+    private var cursor: Cursor? = null
+    private var quotesAdapter: QuotesAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +36,7 @@ class QuoteDetailsActivity : AppCompatActivity() {
             null
         )
 
-        var listOfQuotes = mutableListOf<String>()
+        val listOfQuotes = mutableListOf<String>()
 
         while (cursor!!.moveToNext()) {
             val quote = cursor!!.getString(0)
@@ -45,12 +44,11 @@ class QuoteDetailsActivity : AppCompatActivity() {
         }
 
         // Create an Adapter Object
-
         quotesAdapter = QuotesAdapter(this, listOfQuotes) { quote ->
 
             val shareIntent = Intent()
             shareIntent.action = Intent.ACTION_SEND
-            shareIntent.putExtra(Intent.EXTRA_TEXT,quote)
+            shareIntent.putExtra(Intent.EXTRA_TEXT, quote)
             shareIntent.type = "text/plain"
             startActivity(shareIntent)
 

@@ -18,7 +18,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/birthday" />
+            app:srcCompat="@drawable/birthday"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/tvCategoryName"
@@ -28,7 +29,7 @@
             android:layout_marginBottom="3dp"
             android:fontFamily="cursive"
             android:gravity="center"
-            android:text="Birthday"
+            android:text="@string/birthday"
             android:textSize="30sp"
             android:textStyle="bold" />
     </LinearLayout>

@@ -27,7 +27,7 @@ class QuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, null,
         insertQouteCategory(db, 8, R.drawable.success, "Success")
 
         // Quotes Table
-        db!!.execSQL(
+        db.execSQL(
             "CREATE TABLE quotes(" +
                     "quote TEXT," +
                     "category_id INTEGER)"
@@ -65,11 +65,11 @@ class QuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, null,
         insertQuote(db, "A room without books is like a body without a soul.", 5)
         insertQuote(db, "A room without books is like a body without a soul.", 5)
         insertQuote(db, "A room without books is like a body without a soul.", 5)
-        insertQuote(db, "A room without books is like a body without a soul.", 5)
+        insertQuote(db, "A room without books is like a body without a A.", 5)
 
     }
 
-    fun insertQuote(db: SQLiteDatabase?, quote: String, categoryId: Int) {
+    private fun insertQuote(db: SQLiteDatabase?, quote: String, categoryId: Int) {
         val contentValues = ContentValues()
         contentValues.put("quote", quote)
         contentValues.put("category_id", categoryId)
@@ -78,7 +78,7 @@ class QuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, null,
     }
 
 
-    fun insertQouteCategory(db: SQLiteDatabase?, id: Int, resourceId: Int, name: String) {
+    private fun insertQouteCategory(db: SQLiteDatabase?, id: Int, resourceId: Int, name: String) {
         val contentValues = ContentValues()
         contentValues.put("_id", id)
         contentValues.put("image_resource_id", resourceId)
